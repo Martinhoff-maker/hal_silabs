@@ -326,9 +326,9 @@ void sl_si91x_trigger_sleep(SLEEP_TYPE_T sleepType,
 #endif //SLI_SI91X_MCU_ENABLE_FLASH_BASED_EXECUTION
 
   // Move M4 SOC clock to ULP reference clock before going to PowerSave
-  if (RSI_CLK_M4SocClkConfig(M4CLK, M4_ULPREFCLK, 0) != RSI_OK) {
-    printf("RSI_CLK_M4SocClkConfig failed\n");
-  }
+  // if (RSI_CLK_M4SocClkConfig(M4CLK, M4_ULPREFCLK, 0) != RSI_OK) {
+  //   printf("RSI_CLK_M4SocClkConfig failed\n");
+  // }
 
   /* Check whether M4 is using XTAL */
   if (sli_si91x_is_xtal_in_use_by_m4() == true) {

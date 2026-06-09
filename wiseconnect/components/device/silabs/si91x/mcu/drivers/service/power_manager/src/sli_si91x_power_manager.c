@@ -47,7 +47,6 @@
 #include "sl_si91x_power_manager_wakeup_handler.h"
 #endif
 #include "rsi_debug.h"
-#include "sli_si91x_clock_manager.h"
 #if defined(SL_SI91X_32KHZ_RC_CALIBRATION_ENABLED) && (SL_SI91X_32KHZ_RC_CALIBRATION_ENABLED)
 #include "sli_si91x_32khz_rc_calibration.h"
 #endif
@@ -151,6 +150,11 @@ static sl_status_t convert_rsi_to_sl_error_code(rsi_error_t error);
 #if defined(SLI_WIRELESS_COMPONENT_PRESENT) && (SLI_WIRELESS_COMPONENT_PRESENT == 1)
 __WEAK sl_status_t sli_si91x_submit_rx_pkt(void);
 #endif
+
+sl_status_t sli_si91x_clock_manager_config_clks_on_ps_change(sl_power_state_t power_state,
+							     boolean_t power_mode);
+
+sl_status_t sl_si91x_clock_manager_control_pll(PLL_TYPE_T pll_type, bool enable);
 /*******************************************************************************
  *************************** LOCAL VARIABLES   *******************************
  ******************************************************************************/

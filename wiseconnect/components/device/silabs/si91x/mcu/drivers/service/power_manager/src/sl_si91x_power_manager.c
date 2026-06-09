@@ -32,7 +32,6 @@
 #if (SL_SI91X_TICKLESS_MODE == 1)
 #include "sl_wifi.h"
 #endif
-#include "sli_si91x_clock_manager.h"
 #if SL_WIFI_COMPONENT_INCLUDED
 #include "sl_rsi_utility.h"
 #endif
@@ -94,6 +93,9 @@ boolean_t sl_si91x_power_manager_is_ok_to_sleep(void);
  ******************************************************************************/
 
 static void notify_power_state_transition(sl_power_state_t from, sl_power_state_t to);
+
+sl_status_t sli_si91x_clock_manager_config_clks_on_ps_change(sl_power_state_t power_state,
+							     boolean_t power_mode);
 
 /*******************************************************************************
 ***********************  Global function Definitions *************************

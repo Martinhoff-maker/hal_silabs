@@ -945,14 +945,14 @@ void RSI_IPMU_HP_LDO_Enable(void)
 
 rsi_error_t RSI_IPMU_M32rc_OscTrimEfuse(void)
 {
-  system_clocks.rc_mhz_clock = DEFAULT_MHZ_RC_CLOCK;
+  // system_clocks.rc_mhz_clock = DEFAULT_MHZ_RC_CLOCK;
 
-  if (system_clocks.m4_ref_clock_source == ULP_MHZ_RC_CLK) {
-    system_clocks.m4ss_ref_clk = DEFAULT_MHZ_RC_CLOCK;
-  }
-  if (system_clocks.ulp_ref_clock_source == ULPSS_ULP_MHZ_RC_CLK) {
-    system_clocks.ulpss_ref_clk = DEFAULT_MHZ_RC_CLOCK;
-  }
+  // if (system_clocks.m4_ref_clock_source == ULP_MHZ_RC_CLK) {
+  //   system_clocks.m4ss_ref_clk = DEFAULT_MHZ_RC_CLOCK;
+  // }
+  // if (system_clocks.ulp_ref_clock_source == ULPSS_ULP_MHZ_RC_CLK) {
+  //   system_clocks.ulpss_ref_clk = DEFAULT_MHZ_RC_CLOCK;
+  // }
 
   return RSI_IPMU_ProgramConfigData(m32rc_osc_trim_efuse);
 }
@@ -970,15 +970,15 @@ rsi_error_t RSI_IPMU_M20rcOsc_TrimEfuse(void)
 
   error_status = RSI_IPMU_ProgramConfigData(m20rc_osc_trim_efuse);
 
-  if (error_status == RSI_OK) {
-    system_clocks.rc_mhz_clock = SYSTEM_CLK_VAL_20MHZ;
-    if (system_clocks.m4_ref_clock_source == ULP_MHZ_RC_CLK) {
-      system_clocks.m4ss_ref_clk = SYSTEM_CLK_VAL_20MHZ;
-    }
-    if (system_clocks.ulp_ref_clock_source == ULPSS_ULP_MHZ_RC_CLK) {
-      system_clocks.ulpss_ref_clk = SYSTEM_CLK_VAL_20MHZ;
-    }
-  }
+  // if (error_status == RSI_OK) {
+  //   system_clocks.rc_mhz_clock = SYSTEM_CLK_VAL_20MHZ;
+  //   if (system_clocks.m4_ref_clock_source == ULP_MHZ_RC_CLK) {
+  //     system_clocks.m4ss_ref_clk = SYSTEM_CLK_VAL_20MHZ;
+  //   }
+  //   if (system_clocks.ulp_ref_clock_source == ULPSS_ULP_MHZ_RC_CLK) {
+  //     system_clocks.ulpss_ref_clk = SYSTEM_CLK_VAL_20MHZ;
+  //   }
+  // }
 
   return error_status;
 }
@@ -992,7 +992,7 @@ rsi_error_t RSI_IPMU_M20rcOsc_TrimEfuse(void)
 
 rsi_error_t RSI_IPMU_DBLR32M_TrimEfuse(void)
 {
-  system_clocks.doubler_clock = SYSTEM_CLK_VAL_MHZ;
+  //system_clocks.doubler_clock = SYSTEM_CLK_VAL_MHZ;
   return RSI_IPMU_ProgramConfigData(dblr_32m_trim_efuse);
 }
 
@@ -1005,13 +1005,13 @@ rsi_error_t RSI_IPMU_DBLR32M_TrimEfuse(void)
 
 rsi_error_t RSI_IPMU_M20roOsc_TrimEfuse(void)
 {
-  system_clocks.ro_20mhz_clock = DEFAULT_20MHZ_RO_CLOCK;
-  if (system_clocks.m4_ref_clock_source == ULP_20MHZ_RINGOSC_CLK) {
-    system_clocks.m4ss_ref_clk = DEFAULT_20MHZ_RO_CLOCK;
-  }
-  if (system_clocks.ulp_ref_clock_source == ULPSS_ULP_20MHZ_RINGOSC_CLK) {
-    system_clocks.ulpss_ref_clk = DEFAULT_20MHZ_RO_CLOCK;
-  }
+  // system_clocks.ro_20mhz_clock = DEFAULT_20MHZ_RO_CLOCK;
+  // if (system_clocks.m4_ref_clock_source == ULP_20MHZ_RINGOSC_CLK) {
+  //   system_clocks.m4ss_ref_clk = DEFAULT_20MHZ_RO_CLOCK;
+  // }
+  // if (system_clocks.ulp_ref_clock_source == ULPSS_ULP_20MHZ_RINGOSC_CLK) {
+  //   system_clocks.ulpss_ref_clk = DEFAULT_20MHZ_RO_CLOCK;
+  // }
   return RSI_IPMU_ProgramConfigData(m20ro_osc_trim_efuse);
 }
 
@@ -1024,7 +1024,7 @@ rsi_error_t RSI_IPMU_M20roOsc_TrimEfuse(void)
 
 rsi_error_t RSI_IPMU_RO32khz_TrimEfuse(void)
 {
-  system_clocks.ro_32khz_clock = DEFAULT_32KHZ_RO_CLOCK;
+  // system_clocks.ro_32khz_clock = DEFAULT_32KHZ_RO_CLOCK;
 
   return RSI_IPMU_ProgramConfigData(ro_32khz_trim_efuse);
 }
@@ -1064,7 +1064,7 @@ rsi_error_t RSI_IPMU_RC64khz_TrimEfuse(void)
 
 rsi_error_t RSI_IPMU_RC32khz_TrimEfuse(void)
 {
-  system_clocks.rc_32khz_clock = 32000;
+  // system_clocks.rc_32khz_clock = 32000;
   return RSI_IPMU_ProgramConfigData(rc_32khz_trim_efuse);
 }
 
